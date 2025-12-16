@@ -1,0 +1,26 @@
+.login{
+  text-align : center;
+  padding-top : 50px;
+  
+  border-radius: 8px;
+}
+.register{
+  text-align : center;
+  padding-top : 50px;
+  
+  border-radius: 8px;
+}
+.inputBox{
+  border: 1px solid #060606;
+}
+input:placeholder-shown {
+   font-style: italic;
+}
+
+.user{
+  text-align : center;
+  padding-top : 50px;
+  
+  border-radius: 8px;
+}
+
