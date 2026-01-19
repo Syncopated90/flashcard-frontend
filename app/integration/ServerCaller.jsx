@@ -4,7 +4,7 @@ async function ServerRegister(userData){
   return await callAPI("createAccount", userData)
 }
 async function ServerLogin(userData){
-  //console.log(userData.password)
+  console.log(userData)
   return await callAPI("login", userData)
 }
 

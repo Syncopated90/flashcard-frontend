@@ -1,11 +1,20 @@
 import LoginView from "../views/login";
 import UserView from "../views/user"
 import {ServerLogin} from "../integration/ServerCaller"
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function Login(props){
   const [response, setResponse] = useState(false)
   const [badLogin, setBadLogin] = useState(false)
+
+  useEffect(() => {
+    // Check sessionStorage on page load
+    const user = sessionStorage.getItem('user');
+    if (user) {
+        setResponse(JSON.parse(user));
+        props.setUser(JSON.parse(user));
+        }
+    }, []);
 
   async function handleLogin(e){
     let serverResponse
@@ -24,6 +33,7 @@ export default function Login(props){
     }
     setResponse(serverResponse)
     props.setUser(serverResponse)
+    sessionStorage.setItem('user', JSON.stringify(serverResponse));
     return serverResponse
   }
   return <div>

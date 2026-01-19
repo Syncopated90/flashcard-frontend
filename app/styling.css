@@ -24,3 +24,8 @@ input:placeholder-shown {
   border-radius: 8px;
 }
 
+.flashcard{
+  padding-left:5px;
+  padding-right:5px;
+}
+
