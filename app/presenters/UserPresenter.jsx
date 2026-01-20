@@ -1,5 +1,6 @@
-import UserView from "../views/user"
+import UserView from "../views/user.jsx";
 
 export default function User(props){
-  return <UserView user={props.user}/>
+  console.log(props)
+  //return <UserView />
 }

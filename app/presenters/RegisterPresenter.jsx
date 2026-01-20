@@ -5,6 +5,7 @@ import RegisterView from "../views/register";
 export default function RegisterUser(){
   const [response, setResponse] = useState(false)
   const [badRegister, setBadRegister] = useState(false)
+  
   async function handleRegister(e){
     let serverResponse = await ServerRegister(e)
     

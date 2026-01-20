@@ -2,14 +2,19 @@ import {useState} from 'react';
 
 import Login from "./LoginPresenter";
 import Register from "./RegisterPresenter";
-import User from "../presenters/UserPresenter";
+import User from "./UserPresenter";
+import Account from "./AccountPresenter";
 
 export default function MainPresenter(){
   const [user, setUser] = useState(false)
-
+  //console.log(user.Username)
+  //console.log(user.id)
+  //let loadedUsername = user.Username
+  //console.log("loaded :" + loadedUsername)
+//username = {loadedUsername} userID = {user.id}
   return <div>
     {!user && <Login setUser = {setUser}/>}
-    {!user && <Register/>}
-    {user && <User user={user}/>}
+    {!user && <Register />}
+    {user && <Account user = {user}/>}
   </div>
 }
