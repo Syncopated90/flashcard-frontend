@@ -1,22 +1,25 @@
 import LoginView from "../views/login";
 import UserView from "../views/user"
-import {ServerLogin} from "../integration/ServerCaller"
+import {ServerLogin, GetUserByID} from "../integration/ServerCaller"
 import {useState, useEffect} from 'react';
 
 export default function Login(props){
   const [response, setResponse] = useState(false)
   const [badLogin, setBadLogin] = useState(false)
-  /*useEffect(() => {
+  useEffect(() => {
     // Check sessionStorage on page load
-    const user = sessionStorage.getItem('user');
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(user)
     if (user) {
-        console.log("loading user from session")
-        console.log(user)
+        /*console.log("loading userid from session")
+        console.log(userid)
+        let user = await GetUserByID(userid)*/
         setResponse(user);
         props.setUser(user);
         }
+        
     }, []);
-*/
+
   async function handleLogin(e){
     let serverResponse
     serverResponse = await ServerLogin(e)
@@ -26,7 +29,7 @@ export default function Login(props){
       setBadLogin(true)
     }
     else if(serverResponse){
-      console.log(serverResponse)
+      console.log(serverResponse.id)
       console.log("received response")
     }
     else{
@@ -34,7 +37,7 @@ export default function Login(props){
     }
     setResponse(serverResponse)
     props.setUser(serverResponse)
-    sessionStorage.setItem('user', serverResponse);
+    sessionStorage.setItem('user', JSON.stringify(serverResponse));
     return serverResponse
   }
   return <div>

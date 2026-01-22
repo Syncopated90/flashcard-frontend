@@ -7,7 +7,18 @@ async function ServerLogin(userData){
   console.log(userData)
   return await callAPI("login", userData)
 }
-
+async function GetUserByID(ID){
+  console.log("calling getbyid for: " + ID)
+  return await callAPI("getUserByID", ID)
+}
+async function AddFlashcardByID(userData){
+  console.log(userData)
+  return await callAPI("addFlashcard", userData)
+}
+async function getFlashcardsByID(userID){
+  //console.log("calling api for id: " + userID)
+  return await callAPI("getFlashcards", userID)
+}
 async function callAPI(url, data) {
   try {
     const response = await fetch(backendURL + url,
@@ -24,6 +35,7 @@ async function callAPI(url, data) {
     if (response.status !== 200)
       return response.status;
     console.log("response from server: " + response)
+    //console.log(response)
     return await response.json();
   } catch (e) {
     console.log(e);
@@ -31,4 +43,4 @@ async function callAPI(url, data) {
   }
 }
 
-export {ServerLogin, ServerRegister}
+export {ServerLogin, ServerRegister, GetUserByID, AddFlashcardByID, getFlashcardsByID}

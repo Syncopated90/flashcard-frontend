@@ -1,4 +1,6 @@
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
-//
-export default [index("routes/home.tsx"), route("user", "./presenters/UserPresenter.jsx")] satisfies RouteConfig;
+//route("account", "./presenters/AccountPresenter.jsx"),
+export default [index("routes/home.tsx"), 
+  route("AddFlashcard", "./presenters/FlashcardPresenter.jsx"),
+] satisfies RouteConfig;

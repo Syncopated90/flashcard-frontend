@@ -12,9 +12,10 @@ export default function MainPresenter(){
   //let loadedUsername = user.Username
   //console.log("loaded :" + loadedUsername)
 //username = {loadedUsername} userID = {user.id}
+    //{user && <User hello = {"hello world"}/>}
   return <div>
     {!user && <Login setUser = {setUser}/>}
     {!user && <Register />}
-    {user && <Account user = {user}/>}
+    {user && <Account user = {user} hello={"hello world"}/>}
   </div>
 }
