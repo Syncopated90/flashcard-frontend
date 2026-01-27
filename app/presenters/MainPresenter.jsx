@@ -2,7 +2,6 @@ import {useState} from 'react';
 
 import Login from "./LoginPresenter";
 import Register from "./RegisterPresenter";
-import User from "./UserPresenter";
 import Account from "./AccountPresenter";
 
 export default function MainPresenter(){

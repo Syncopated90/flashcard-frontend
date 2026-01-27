@@ -11,6 +11,7 @@ export default function Account(props){
         const response = await getFlashcardsByID(id)
         if(response){
           setFlashcards(response)
+          localStorage.setItem('flashcards', JSON.stringify(response))
           return response
         }
       }catch(e){

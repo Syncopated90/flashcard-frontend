@@ -19,6 +19,12 @@ async function getFlashcardsByID(userID){
   //console.log("calling api for id: " + userID)
   return await callAPI("getFlashcards", userID)
 }
+async function removeFlashcardByID(cardID){
+  return await callAPI("removeFlashcardByID", cardID)
+}
+async function flipFlashcardByID(cardID){
+  return await callAPI("flipFlashcardByID", cardID)
+}
 async function callAPI(url, data) {
   try {
     const response = await fetch(backendURL + url,
@@ -43,4 +49,6 @@ async function callAPI(url, data) {
   }
 }
 
-export {ServerLogin, ServerRegister, GetUserByID, AddFlashcardByID, getFlashcardsByID}
+export {ServerLogin, ServerRegister, GetUserByID, AddFlashcardByID, getFlashcardsByID, removeFlashcardByID,
+  flipFlashcardByID
+}

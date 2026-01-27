@@ -12,6 +12,7 @@
 }
 .inputBox{
   border: 1px solid #060606;
+  padding-left:5px;
 }
 input:placeholder-shown {
    font-style: italic;
@@ -25,11 +26,37 @@ input:placeholder-shown {
 }
 
 .flashcard{
+  width:100px;
   padding-left:5px;
   padding-right:5px;
 }
 
 .deleteButton{
-  padding-left: 20px;
+  background-color:red;
+  padding-inline: 6px;
+  color:white;
+  margin-left:30px;
+}
+
+.flipButton{
+  margin-left:30px;
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.mainHeader{
+  text-align:center;
+  font-size:26px;
+  margin-top:20px;
+}
+.practice{
+  text-align:center;
+  margin-top:20px;
+}
+.practiceFlashcard{
+  font-size:40px;
 }
 

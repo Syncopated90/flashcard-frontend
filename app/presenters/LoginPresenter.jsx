@@ -8,7 +8,7 @@ export default function Login(props){
   const [badLogin, setBadLogin] = useState(false)
   useEffect(() => {
     // Check sessionStorage on page load
-    const user = JSON.parse(sessionStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem('user'));
     console.log(user)
     if (user) {
         /*console.log("loading userid from session")
@@ -37,7 +37,7 @@ export default function Login(props){
     }
     setResponse(serverResponse)
     props.setUser(serverResponse)
-    sessionStorage.setItem('user', JSON.stringify(serverResponse));
+    localStorage.setItem('user', JSON.stringify(serverResponse));
     return serverResponse
   }
   return <div>
