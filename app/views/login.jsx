@@ -48,7 +48,7 @@ export default function LoginView(props){
                            className={"inputBox"}/>
                 </div>
                 {error && <div className={"error-message"}>{error}</div>}
-                <button type="submit" onClick={handleSubmit}>Log in please!</button>
+                <button type="submit" onClick={handleSubmit}>Log in please thank you!</button>
             </form>
   </div>
 }
