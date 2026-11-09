@@ -13,7 +13,7 @@ export default function LoginView(props){
   const handleSubmit = (e) => {
         e.preventDefault();
         if (!username || !password) {
-            setError('Please fill in all fields');
+            setError('Please plesase please fill in all fields');
             return;
         }
         loginACB()
