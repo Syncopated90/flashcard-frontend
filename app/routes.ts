@@ -4,5 +4,5 @@ import { type RouteConfig, index, route } from "@react-router/dev/routes";
 export default [index("routes/home.tsx"), 
   route("AddFlashcard", "./presenters/FlashcardPresenter.jsx"),
   route("EditFlashcards", "./presenters/EditFlashcardsPresenter.jsx"),
-  route("Practice", "./presenters/PRacticePresenter.jsx"),
+  route("Practice", "./presenters/PracticePresenter.jsx"),
 ] satisfies RouteConfig;
