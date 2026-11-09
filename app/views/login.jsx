@@ -13,7 +13,7 @@ export default function LoginView(props){
   const handleSubmit = (e) => {
         e.preventDefault();
         if (!username || !password) {
-            setError('Please plesase please fill in all fields');
+            setError('Please fill in all fields');
             return;
         }
         loginACB()
@@ -48,7 +48,7 @@ export default function LoginView(props){
                            className={"inputBox"}/>
                 </div>
                 {error && <div className={"error-message"}>{error}</div>}
-                <button type="submit" onClick={handleSubmit}>Please press this button to log in</button>
+                <button type="submit" onClick={handleSubmit}>Press this button to log in</button>
             </form>
   </div>
 }
